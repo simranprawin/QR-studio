@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">▦</span>
+      QR Studio
+    </a>
+
+    <div class="header-actions">
+      <button id="themeButton" class="icon-button">🌙</button>
+      <span class="day-badge">DAY 7 PROJECT</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-badge">SCAN. SHARE. CONNECT.</div>
+
+      <h1>
+        Turn anything into a
+        <span>smart QR code.</span>
+      </h1>
+
+      <p>
+        Create beautiful, customizable QR codes for links, messages,
+        contact details, menus, and more.
+      </p>
+    </section>
+
+    <section class="studio">
+      <div class="editor-card">
+        <div class="card-heading">
+          <div>
+            <h2>Create your QR code</h2>
+            <p>Enter content and customize the design.</p>
+          </div>
+
+          <span class="status-dot"></span>
+        </div>
+
+        <label for="contentInput">Text or URL</label>
+
+        <textarea
+          id="contentInput"
+          rows="5"
+          placeholder="https://example.com"
+        ></textarea>
+
+        <div class="quick-options">
+          <button class="quick-button" data-value="https://">
+            🔗 Website
+          </button>
+
+          <button
+            class="quick-button"
+            data-value="mailto:"
+          >
+            ✉️ Email
+          </button>
+
+          <button
+            class="quick-button"
+            data-value="tel:"
+          >
+            📞 Phone
+          </button>
+
+          <button class="quick-button" data-value="WIFI:">
+            📶 Wi-Fi
+          </button>
+        </div>
+
+        <div class="customization">
+          <h3>Customize</h3>
+
+          <div class="custom-grid">
+            <div class="color-control">
+              <label for="foregroundColor">QR color</label>
+
+              <div class="color-input">
+                <input
+                  type="color"
+                  id="foregroundColor"
+                  value="#241b4b"
+                />
+
+                <span id="foregroundValue">#241B4B</span>
+              </div>
+            </div>
+
+            <div class="color-control">
+              <label for="backgroundColor">Background</label>
+
+              <div class="color-input">
+                <input
+                  type="color"
+                  id="backgroundColor"
+                  value="#ffffff"
+                />
+
+                <span id="backgroundValue">#FFFFFF</span>
+              </div>
+            </div>
+          </div>
+
+          <label for="sizeInput">QR code size</label>
+
+          <div class="range-row">
+            <input
+              type="range"
+              id="sizeInput"
+              min="180"
+              max="320"
+              value="240"
+            />
+
+            <span id="sizeValue">240px</span>
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button id="clearButton" class="secondary-button">
+            Clear
+          </button>
+
+          <button id="generateButton" class="generate-button">
+            ✨ Generate QR Code
+          </button>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="preview-heading">
+          <div>
+            <h2>Preview</h2>
+            <p>Your QR code will appear here.</p>
+          </div>
+
+          <span class="live-badge">LIVE</span>
+        </div>
+
+        <div id="qrWrapper" class="qr-wrapper">
+          <div id="qrcode"></div>
+
+          <div id="emptyPreview" class="empty-preview">
+            <div>▦</div>
+            <p>Enter text or a URL<br />to generate your QR code</p>
+          </div>
+        </div>
+
+        <div class="preview-actions">
+          <button id="downloadButton" class="download-button" disabled>
+            ⬇ Download PNG
+          </button>
+
+          <button id="copyButton" class="copy-button" disabled>
+            📋 Copy Content
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-section">
+      <div class="tip-card">
+        <span>💡</span>
+        <div>
+          <h3>Make it useful</h3>
+          <p>Use QR codes for menus, portfolios, event tickets, and more.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <span>🎨</span>
+        <div>
+          <h3>Make it yours</h3>
+          <p>Choose colors that match your brand or personal style.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <span>⚡</span>
+        <div>
+          <h3>Keep it simple</h3>
+          <p>Shorter content usually creates easier-to-scan codes.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Content copied!</div>
+
+  <footer>
+    <p>Day 7 Project · QR Studio</p>
+  </footer>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+  ></script>
+  <script src="script.js"></script>
+</body>
+</html>
